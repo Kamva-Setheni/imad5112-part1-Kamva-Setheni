@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.historicalfigurelist</span>
+
+<span class="s1">import androidx.appcompat.app.AppCompatActivity</span>
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import android.widget.Button</span>
+<span class="s1">import android.widget.EditText</span>
+<span class="s1">import android.widget.TextView</span>
+
+<span class="s0">class </span><span class="s1">MainActivity : AppCompatActivity() {</span>
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate(savedInstanceState: Bundle?) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span>
+        <span class="s1">setContentView(R.layout.activity_main)</span>
+
+
+
+
+            <span class="s2">//Constant variable for minimum and maximum age</span>
+            <span class="s0">val </span><span class="s1">minValidAge: Int = </span><span class="s3">20</span>
+            <span class="s0">val </span><span class="s1">maxValidAge: Int = </span><span class="s3">100</span>
+
+            <span class="s2">//Declare variables for UI elements</span>
+            <span class="s0">val </span><span class="s1">inputAgeField: EditText = findViewById(R.id.inputAgeField)</span>
+            <span class="s0">val </span><span class="s1">resultTextView: TextView = findViewById(R.id.resultTextView)</span>
+            <span class="s0">val </span><span class="s1">generateButton: Button = findViewById(R.id.generateButton)</span>
+            <span class="s0">val </span><span class="s1">clearButton: Button = findViewById(R.id.clearButton)</span>
+
+            <span class="s1">clearButton?.setOnClickListener {</span>
+                <span class="s1">inputAgeField.text.clear()</span>
+                <span class="s1">resultTextView.text = </span><span class="s4">&quot;&quot;</span>
+            <span class="s1">}</span>
+
+            <span class="s1">generateButton?.setOnClickListener {</span>
+                <span class="s0">var </span><span class="s1">generated = inputAgeField.text.toString().toIntOrNull()</span>
+
+                <span class="s0">if </span><span class="s1">(generated==</span><span class="s0">null</span><span class="s1">){</span>
+                    <span class="s1">resultTextView.text=</span><span class="s4">&quot;Error please enter whole number&quot;</span>
+                <span class="s1">}</span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">30</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Steve Biko Anti-Apartheid activist&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">74</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Muhammad Ali Boxing legend&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">57</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Mansa Musa Richest man in history&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">45</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Freddie Mercury Music legend and lead singer for Queen&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">65</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Genghis Khan Greatest general in history&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">81</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Sixto (Sugarman) Rodriguez Forgotten music legend&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">99</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Prince Philip Could'nt Keep it 100&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">24</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;The Notorious B.I.G Hip Hop legend who was murdered &quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">39</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text =</span>
+                        <span class="s4">&quot;Brenda Fassie MaBrrr singer songwritter, dancer, activist&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated == </span><span class="s3">48</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Whitney Houston Famous singer who was known &quot; </span><span class="s1">+</span>
+                            <span class="s4">&quot;for her vocal range&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated &lt;= </span><span class="s3">20</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Error number is out of age range&quot;</span>
+                <span class="s1">} </span><span class="s0">else if </span><span class="s1">(generated &gt;= </span><span class="s3">100</span><span class="s1">) {</span>
+                    <span class="s1">resultTextView.text = </span><span class="s4">&quot;Error number is out of age range&quot;</span>
+
+                <span class="s1">} </span><span class="s0">else </span><span class="s1">resultTextView.text = </span><span class="s4">&quot;Error no figure matched&quot;</span>
+
+
+            <span class="s1">}</span>
+
+
+
+
+        <span class="s1">}</span>
+
+    <span class="s1">}</span>
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>
