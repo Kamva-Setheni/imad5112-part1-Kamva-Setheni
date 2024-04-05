@@ -11,13 +11,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-
-            //Constant variable for minimum and maximum age
-            val minValidAge: Int = 20
-            val maxValidAge: Int = 100
-
             //Declare variables for UI elements
             val inputAgeField: EditText = findViewById(R.id.inputAgeField)
             val resultTextView: TextView = findViewById(R.id.resultTextView)
@@ -28,8 +21,7 @@ class MainActivity : AppCompatActivity() {
                 inputAgeField.text.clear()
                 resultTextView.text = ""
             }
-
-            generateButton?.setOnClickListener {
+        generateButton?.setOnClickListener {
                 var generated = inputAgeField.text.toString().toIntOrNull()
 
                 if (generated==null){
@@ -62,13 +54,7 @@ class MainActivity : AppCompatActivity() {
                     resultTextView.text = "Error number is out of age range"
 
                 } else resultTextView.text = "Error no figure matched"
-
-
             }
-
-
-
-
         }
 
     }
